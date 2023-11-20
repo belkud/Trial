@@ -1,4 +1,4 @@
 export default {
-    base: '/название моего проекта/'
+    base: '/Trial/'
   }
   
