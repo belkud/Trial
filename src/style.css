@@ -11,4 +11,14 @@ body {
   align-items: baseline;
   gap: 5px;
   width: 25%;
+  margin-top: 23%;
+}
+
+.btn {
+  background-color: rgb(161, 161, 7);
+  border-color: aliceblue;
+  color: aliceblue;
+  border-radius: 5px;
+  padding: 3px;
+  width: 100px;
 }
