@@ -13,6 +13,9 @@ body {
   width: 25%;
   margin-top: 23%;
 }
+.blockChangeColor {
+  background-color: aqua !important;
+}
 
 .btn {
   background-color: rgb(161, 161, 7);

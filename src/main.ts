@@ -2,7 +2,8 @@ import './style.css'
  
  const block = document.querySelector('#block') as HTMLDivElement
  block.addEventListener ('click', ()=> {
-    console.log(423);
+   block.classList.toggle('blockChangeColor')
+    console.log(block.classList);
     
  })
 
