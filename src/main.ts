@@ -1,11 +1,23 @@
 import './style.css'
  
- const block = document.querySelector('#block') as HTMLDivElement
- block.addEventListener ('click', ()=> {
-   block.classList.toggle('blockChangeColor')
-    console.log(block.classList);
+ const block = document.querySelectorAll('#block') 
+ const btn = document.querySelectorAll('.btn') 
+
+ block.forEach(btn=>
+   btn.addEventListener('click', (event)=> {
+      console.log(event.target.dataset.set);
+
+      // const al= alert (event.target.dataset.set)
+      event.preventDefault()
+      btn.classList.toggle('blockChangeColor')
+      
+   })
+
+ )
+
+   //  console.log(block.classList);
     
- })
+ 
 
  console.log(`ширина окна браузера ${window.innerWidth} px`);
  
@@ -32,6 +44,7 @@ console.log(Function);
 
 
 
+console.log(document.DOCUMENT_NODE);
 
 
 
