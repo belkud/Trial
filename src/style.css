@@ -13,9 +13,6 @@ body {
   width: 25%;
   margin-top: 23%;
 }
-.blockChangeColor {
-  background-color: aqua !important;
-}
 
 .btn {
   background-color: rgb(161, 161, 7);
@@ -24,4 +21,17 @@ body {
   border-radius: 5px;
   padding: 3px;
   width: 100px;
+}
+.blockChangeColor {
+  background-color: aqua ;
+}
+ 
+.press {
+  margin-top: 20px;
+  color: aliceblue;
+  background-color: rgb(243, 66, 66);
+  border-radius: 5px;
+  padding: 5px;
+  width: 100px;
+  border-color: aliceblue;
 }
