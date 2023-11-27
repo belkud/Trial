@@ -95,8 +95,12 @@ for (let node of document.body.childNodes) {
 const child = document.querySelector('#btn_1') as HTMLDivElement
 const parent = child.closest('#block')
 console.log(parent);
+console.log(parent);
  
  
+  
+
+
 
 console.log(block.firstChild); //! первый ребёнок элемента
 console.log(block.lastChild); //! последний ребёнок элемента
