@@ -91,27 +91,33 @@ for (let node of document.body.childNodes) {
    
 }
 
+ 
+
 // !closest часто используется для проверки на существование родителя
 const child = document.querySelector('#btn_1') as HTMLDivElement
 const parent = child.closest('#block')
 console.log(parent);
-console.log(parent);
- 
+
  
   
+const previousSibling =btn_5.previousElementSibling  as HTMLDivElement
+  
+  btn_5.addEventListener ('click', ()=> {
+   console.log(block.nextElementSibling.style.color = 'red' );
+  })
+
+console.log(previousSibling);
+ 
 
 
+console.log(block.childNodes);  //!Содержание элементов в родители
+console.log(block.childNodes[6]); //! текст-блок, текст-блок, внимательно в написании!
 
 console.log(block.firstChild); //! первый ребёнок элемента
 console.log(block.lastChild); //! последний ребёнок элемента
 
-console.log(block.childNodes);  //!Содержание элементов в родители
-console.log(block.childNodes[6]); //! текст-блок, текст-блок, внимательно в написании!
-// block.childNodes[5].remove()
-
-
-console.log(block.previousSibling); //! div ПЕРЕД block
-console.log(block.nextSibling); //! div ПОСЛЕ block
+console.log(block.previousElementSibling); //! Предыдущий элемент того же родителя
+console.log(block.nextElementSibling); //! Следующий элемент того же родителя
 
  
 
@@ -126,3 +132,5 @@ const press_button = document.getElementsByClassName('.press')
       
 console.log(press_button);
  
+
+
