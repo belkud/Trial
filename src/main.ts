@@ -113,8 +113,8 @@ console.log(previousSibling);
 console.log(block.childNodes);  //!Содержание элементов в родители
 console.log(block.childNodes[6]); //! текст-блок, текст-блок, внимательно в написании!
 
-console.log(block.firstChild); //! первый ребёнок элемента
-console.log(block.lastChild); //! последний ребёнок элемента
+console.log(block.firstElementChild); //! первый ребёнок элемента
+console.log(block.lastElementChild); //! последний ребёнок элемента
 
 console.log(block.previousElementSibling); //! Предыдущий элемент того же родителя
 console.log(block.nextElementSibling); //! Следующий элемент того же родителя
@@ -132,5 +132,15 @@ const press_button = document.getElementsByClassName('.press')
       
 console.log(press_button);
  
+
+const table = document.querySelector('table') as HTMLTableElement
+table.addEventListener ('click', ()=> {
+   table.firstElementChild.style.color = 'blue'
+   console.log(555);
+   
+})
+
+
+
 
 
