@@ -12,9 +12,20 @@ body {
   gap: 5px;
   width: 25%;
   margin-top: 23%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  
 }
 
- 
+ #block>button {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+ }
 
 .btn {
   background-color: rgb(161, 161, 7);
@@ -23,6 +34,7 @@ body {
   border-radius: 5px;
   padding: 3px;
   width: 100px;
+
 }
 
 .btn_trick {

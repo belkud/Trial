@@ -38,11 +38,21 @@ import './style.css'
       
       const list_scedrule = document.querySelectorAll('.list>li')
       list_scedrule.forEach(list =>{
-         list.addEventListener ('click',()=> {
+         list.addEventListener ('click',(event)=> {
+            // console.log(list_scedrule[1]);
             //   for (let i=0; i<btn.length;i++) {
-               const x = list.innerHTML*100
-               btn_1.style.paddingLeft = x+'px'
-               btn_1.style.transition = 3 +'s'
+               let y = parseInt(list.dataset.set)
+               
+               console.log(y);
+                  
+
+               btn_1.style.paddingLeft = 50*y+'px'
+               btn_1.style.paddingRight = 50*y+'px'
+               btn_1.style.transition = 1.5 +'s'
+               btn_1.innerHTML = `кнопка li ${list_scedrule[y-1].innerHTML}`
+               console.log(parseInt(btn_1.style.paddingLeft)+'px');
+               
+
                // btn_class[3].style.color = 'red'
                // btn_class[4].style.width = list[3].innerHTML
                
