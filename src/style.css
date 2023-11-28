@@ -19,13 +19,22 @@ body {
   
 }
 
- #block>button {
+#block>button {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   color: red;
- }
+}
+
+/* все стили заменены в js */
+#checkStyle {
+  border: 1px solid #000;
+  background-color: orange;
+  color: red;
+  width: 28%;
+}
+ 
 
 .btn {
   background-color: rgb(161, 161, 7);

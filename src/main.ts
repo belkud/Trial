@@ -27,10 +27,19 @@ import './style.css'
  
 
 
-      // press_button.addEventListener ('click', ()=> {
-      //    console.log(9080);
-      // })
-      
+// !   .style.cssText - меняет стили также как и в CSS
+
+
+     const checkStyle = document.querySelector('#checkStyle') as HTMLDivElement
+     
+     checkStyle.style.cssText = `
+     color:aliceblue;
+     padding:10px;
+     margin:25px;
+     background-color:red;
+     text-align:center;
+     `
+     checkStyle.innerHTML = '<span style=color:aqua >Замена</span> стилей через .style.cssText'
     
       
       const btn_1 = document.querySelector('#btn_1')  as HTMLDivElement
@@ -41,17 +50,38 @@ import './style.css'
          list.addEventListener ('click',(event)=> {
             // console.log(list_scedrule[1]);
             //   for (let i=0; i<btn.length;i++) {
-               let y = parseInt(list.dataset.set)
-               
-               console.log(y);
-                  
 
-               btn_1.style.paddingLeft = 50*y+'px'
-               btn_1.style.paddingRight = 50*y+'px'
-               btn_1.style.transition = 1.5 +'s'
-               btn_1.innerHTML = `кнопка li ${list_scedrule[y-1].innerHTML}`
-               console.log(parseInt(btn_1.style.paddingLeft)+'px');
+
+               //! Через data-set
+               // let y = parseInt(list.dataset.set)
+               // btn_1.innerHTML = `кнопка li ${list_scedrule[y-1].innerHTML}`
+               // console.log(parseInt(btn_1.style.paddingLeft)+'px');
+               // btn_1.style.transition = 1.5 +'s'
+               // btn_1.style.paddingLeft = 50*y+'px'
+               // btn_1.style.paddingRight = 50*y+'px'
                
+               
+               
+               // //! Через list.innerHTML
+               let z = list.innerHTML
+               btn_1.style.paddingLeft = 50*z+'px'
+               btn_1.style.paddingRight = 50*z+'px'
+               btn_1.style.transition = 1.5 +'s'
+               btn_1.innerHTML = `кнопка li ${z}`
+               console.log(parseInt(z));
+               
+               console.log(btn_1.style.paddingLeft);
+               
+               // if (btn_1.nextElementSibling=null) {
+                  btn_1.nextElementSibling.style.color = 'blue'
+               // }
+
+               // console.log((q));
+               
+
+
+               // console.log(parseInt(btn_1.style.paddingLeft)+'px');
+
 
                // btn_class[3].style.color = 'red'
                // btn_class[4].style.width = list[3].innerHTML
@@ -63,7 +93,7 @@ import './style.css'
          })
          
          
-         
+         //! Зажатие 'Alt' помогает выделить место для текста сразу в нескольких местах
          
          
          
