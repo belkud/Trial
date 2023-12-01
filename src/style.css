@@ -3,6 +3,49 @@ body {
 }
 
  
+
+#markerContent {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 310px;
+  gap: 15px;
+  background-color:rgb(148, 218, 218);
+  padding: 20px;
+  border: 1px solid rgb(133, 133, 229);
+  border-radius: 5px;
+}
+
+#red {
+  background-color: red;
+}
+#blue {
+  background-color: blue;
+}
+#green {
+  background-color: green;
+}
+#markerContent>div>button {
+  color: aliceblue;
+  width: 100px;
+  padding: 3px;
+  border-radius: 5px;
+  border-color:white;
+}
+#markerContent>h3 {
+  text-align: center;
+  text-shadow: 1px -1px white;
+  color: red;
+}
+#markerText {
+  height: 50px;
+}
+
+
+
+
+
 #block {
   background-color: orange;
   display: flex;

@@ -1,5 +1,44 @@
 import './style.css'
  
+
+
+
+
+
+//! СДЕЛАТЬ МАРКЕР (красный, синий, зеленый)!
+
+const redMarker = document.querySelector ('#red') as HTMLButtonElement
+const greenMarker = document.querySelector ('#green') as HTMLButtonElement
+const blueMarker = document.querySelector ('#blue') as HTMLButtonElement
+const markerText = document.querySelector ('#markerText') as HTMLInputElement
+redMarker.addEventListener('click', ()=> {
+   markerText.style.color = 'red'
+ 
+})
+
+markerText.addEventListener ('keydown', ()=> {
+   // let x = markerText.value
+   for (let i=1; i<5; i++) {
+      markerText.length <= `${i}`
+      console.log(markerText.value );
+      console.log(i);
+      
+   }
+   
+})
+
+console.log(markerText.innerHTML = 'k');
+
+
+greenMarker.addEventListener('click', ()=> {
+   markerText.style.color = 'green'
+})
+blueMarker.addEventListener('click', ()=> {
+   markerText.style.color = 'blue'
+})
+
+
+
  const block = document.querySelector('#block')  as HTMLDivElement
  const btn = document.querySelectorAll('.btn') 
  
@@ -110,17 +149,17 @@ import './style.css'
          //! Браузерное окружение Window:
          
          //! BOM
-         console.log(navigator);
-         console.log(location);
-         console.log(history);
+         // console.log(navigator);
+         // console.log(location);
+         // console.log(history);
          
          //! DOM (всё что в HTML странице)
-         console.log(document);
+         // console.log(document);
          
          //! Javascript
-         console.log(Object);
-         console.log(Array);
-         console.log(Function);
+         // console.log(Object);
+         // console.log(Array);
+         // console.log(Function);
          
          //  const question = confirm('Хочешь стать программистом?');
          //  console.log(question);
