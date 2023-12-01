@@ -1,5 +1,6 @@
 body {
-  background-color: lightgray;
+  /* background-color: lightgray; */
+  background-color: black;
 }
 
  
@@ -7,7 +8,7 @@ body {
 #markerContent {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 250px;
   margin-left: 50px;
   width: 310px;
   gap: 15px;
@@ -16,7 +17,6 @@ body {
   border: 1px solid rgb(133, 133, 229);
   border-radius: 5px;
 }
-
 #red {
   background-color: red;
 }
@@ -26,12 +26,13 @@ body {
 #green {
   background-color: green;
 }
-#markerContent>div>button {
+#markerContent>div>button, #deleteLetters {
   color: aliceblue;
   width: 100px;
   padding: 3px;
   border-radius: 5px;
   border-color:white;
+  cursor: pointer;
 }
 #markerContent>h3 {
   text-align: center;
@@ -41,7 +42,10 @@ body {
 #markerText {
   height: 50px;
 }
-
+#deleteLetters {
+  width: 120px;
+  background-color: black;
+}
 
 
 

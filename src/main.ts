@@ -5,29 +5,30 @@ import './style.css'
 
 
 
-//! СДЕЛАТЬ МАРКЕР (красный, синий, зеленый)!
+//! Сделать маркер (красный, синий, зеленый)!
 
 const redMarker = document.querySelector ('#red') as HTMLButtonElement
 const greenMarker = document.querySelector ('#green') as HTMLButtonElement
 const blueMarker = document.querySelector ('#blue') as HTMLButtonElement
+const deleteLetters = document.querySelector ('#deleteLetters') as HTMLButtonElement
 const markerText = document.querySelector ('#markerText') as HTMLInputElement
 redMarker.addEventListener('click', ()=> {
    markerText.style.color = 'red'
+})
+
  
-})
-
-markerText.addEventListener ('keydown', ()=> {
    // let x = markerText.value
-   for (let i=1; i<5; i++) {
-      markerText.length <= `${i}`
-      console.log(markerText.value );
-      console.log(i);
-      
-   }
+   // for (let i=1; i<5; i++) {
+      // markerText.innerText <= `${i}`
+      markerText.innerText 
+      // console.log(markerText.value );
+      // console.log(i);
+      markerText.value.length < 10
+      console.log(markerText.value.length);
+ 
    
-})
+// }
 
-console.log(markerText.innerHTML = 'k');
 
 
 greenMarker.addEventListener('click', ()=> {
@@ -36,6 +37,18 @@ greenMarker.addEventListener('click', ()=> {
 blueMarker.addEventListener('click', ()=> {
    markerText.style.color = 'blue'
 })
+
+deleteLetters.addEventListener('click', ()=> {
+   markerText.value = ''
+})
+
+
+
+
+
+
+
+
 
 
 
