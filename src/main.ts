@@ -135,6 +135,8 @@ printLetters.addEventListener ('click', ()=> {
 // печать текста в верхнем блоке
 markerText.addEventListener('keydown', (event)=> {
    console.log(event.code);
+   console.log(event.keyCode);
+   console.log(event.key);
 
    pencil.style.marginLeft = markerText.value.length*7.4-1000+ 'px'
    let elem = rightSide.childNodes[3]
@@ -144,7 +146,7 @@ markerText.addEventListener('keydown', (event)=> {
    let elem2 = rightSide.childNodes[7]
    elem2.innerHTML = (digital+1)*2.5 + '%'
    
-   if (event.code == 'Backspace' || event.code == 'Delete') {
+   if (event.code == 'Backspace' || event.code == 'Delete' || event.key == 'Backspace' || event.key == 'Delete') {
       pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px' 
       elem2.innerHTML = (digital-1)*2.5 + '%'
       elem.innerHTML = digital-1
