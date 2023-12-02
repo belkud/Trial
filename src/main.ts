@@ -129,24 +129,28 @@ printLetters.addEventListener ('click', ()=> {
 })
 
 
+
+
+
 markerText.addEventListener('keydown', (event)=> {
    console.log(event.code);
-   // pencil.style.marginLeft = markerText.value.length*7.4+ 'px'
    pencil.style.marginLeft = markerText.value.length*7.4-1000+ 'px'
    if (event.code == 'Backspace') {
-      pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px'
-         
+      pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px'     
    }
-
    let elem = rightSide.childNodes[3]
    let digital = markerText.value.length
    elem.innerHTML = digital+1
-   // elem.innerHTML = (digital+1)/2
 
+   let elem2 = rightSide.childNodes[7]
+   elem2.innerHTML = digital*2.5 + '%'
+
+   // for (let i =1; i<)
    console.log(elem);
+
    
-
-
+   
+   
 })
 
 // console.log(markerText.innerText.length);
@@ -175,6 +179,10 @@ blueMarker.addEventListener('click', ()=> {
 
 deleteLetters.addEventListener('click', ()=> {
    markerText.value = ''
+   if (event.code == 'Backspace') {
+      pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px'
+         
+   }
 })
 
 
