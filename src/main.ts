@@ -124,6 +124,7 @@ markerContainer.addEventListener ('click', ()=> {
    
 })
 
+// печать текста в нижнем блоке
 printLetters.addEventListener ('click', ()=> {
    showText.innerHTML += markerText.value   
 })
@@ -131,16 +132,32 @@ printLetters.addEventListener ('click', ()=> {
 
 
 
-
+// блок с маркером
 markerText.addEventListener('keydown', (event)=> {
    console.log(event.code);
+
    pencil.style.marginLeft = markerText.value.length*7.4-1000+ 'px'
-   if (event.code == 'Backspace') {
-      pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px'     
-   }
    let elem = rightSide.childNodes[3]
    let digital = markerText.value.length
    elem.innerHTML = digital+1
+   
+   if (event.code == 'Backspace') {
+      pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px' 
+      elem.innerHTML = digital-1
+      if (elem.innerHTML ==-1) {
+         elem.innerHTML=0
+      }
+   }
+
+   if (elem.innerHTML>=41){
+      elem.innerHTML= ''
+      alert ('Блок переполнен')
+   }
+
+   
+   // console.log(elem.innerHTML);
+   // console.log(elem.nodeValue.length);
+       
 
    let elem2 = rightSide.childNodes[7]
    elem2.innerHTML = digital*2.5 + '%'
@@ -177,12 +194,13 @@ blueMarker.addEventListener('click', ()=> {
    pencil.classList.add('pencilBlue')
 })
 
-deleteLetters.addEventListener('click', ()=> {
+deleteLetters.addEventListener('click', (event)=> {
    markerText.value = ''
    if (event.code == 'Backspace') {
       pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px'
-         
    }
+     
+         
 })
 
 

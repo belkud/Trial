@@ -8,7 +8,9 @@ body {
    margin-left: 50px;
    display: flex;
  }
-
+/* #button {
+  color: red;
+} */
 #rightSide {
   color: aliceblue;
   display: flex;
@@ -38,6 +40,10 @@ body {
 }
 #green {
   background-color: green;
+}
+
+#red:active, #blue:active, #green:active, #printLetters:active, #deleteLetters:active {
+  border-color: aliceblue;
 }
 
 #markerContent>div>button, #deleteLetters, #printLetters {
