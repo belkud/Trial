@@ -117,21 +117,18 @@ const pencil = document.querySelector ('#pencil') as HTMLPictureElement
 
 
 printLetters.addEventListener ('click', ()=> {
-   showText.innerHTML += markerText.value
-
-   let shift = markerText.value.length  
-   pencil.style.marginLeft += shift*7-500+ 'px'
-   
-   
-   console.log(pencil.style.marginLeft);
-   console.log(shift);
-   
+   showText.innerHTML += markerText.value   
 })
 
-markerText.addEventListener('keydown', ()=> {
-   console.log(3);
+
+markerText.addEventListener('keydown', (event)=> {
+   console.log(event.code);
+   // let shift = pencil.style.marginLeft
    pencil.style.marginLeft = markerText.value.length*7.4+ 'px'
-   
+   if (event.code == 'Backspace') {
+      pencil.style.marginLeft = markerText.value.length*7.4-14.4 + 'px'
+         
+   }
 })
 
 // console.log(markerText.innerText.length);
