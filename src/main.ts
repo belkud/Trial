@@ -139,16 +139,13 @@ markerText.addEventListener('keydown', (event)=> {
    
    let elem2 = rightSide.childNodes[7]
    elem2.innerHTML = (digital+1)*2.5 + '%'
-
-   // line1.style.background = 'rgb(87, 87, 88)'
+ 
 
    let moveLine = line1.firstElementChild
+   moveLine.style.width = digital*6.1 + 'px'
    moveLine.style.border ='1px solid aliceblue'
    moveLine.style.transition = .5 + 's'
-   moveLine.style.width = digital*4.05 + 'px'
-   console.log(digital+1);
    
-
    if (elem.innerHTML>=41){
       markerText.innerHTML= ''
       alert ('Блок переполнен')
@@ -164,12 +161,17 @@ markerText.addEventListener('keydown', (event)=> {
 
       if (elem2.innerHTML==-2.5+ '%'){
          elem2.innerHTML=0+ '%'
-         console.log('hi');
          
-         console.log(elem2.innerHTML);
       }
+
+      // if (moveLine.style.width == digital*6.1 + 'px') {
+      //    moveLine.style.width = (digital-1)*6.1 + 'px'
+      // }
+      moveLine.style.width == digital*30 + 'px'
+      console.log(markerText.value.length);
+      console.log(  moveLine.style.width == digital*6.1 + 'px');
    }
- 
+   
 })
 
 // console.log(markerText.innerText.length);
