@@ -297,14 +297,19 @@ color: red;
 }
 
 @media screen and (max-width:680px) {
+  #markerContainer {
+    /* display: flex; */
+    flex-direction: column;
+  }
   #markerContent>div {
     display: flex;
     flex-direction: column;
-    color: red;
     gap: 10px;
   }
   #pencil {
     margin-top: 200px;
   }
-
+  #rightSide {
+    border: none;
+  }
 }
