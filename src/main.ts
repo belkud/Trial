@@ -124,17 +124,19 @@ printLetters.addEventListener ('click', ()=> {
 markerText.addEventListener('keydown', (event)=> {
    console.log(event.code);
    // pencil.style.marginLeft = markerText.value.length*7.4+ 'px'
-   pencil.style.marginLeft = markerText.value.length*7.4-100+ 'px'
+   pencil.style.marginLeft = markerText.value.length*7.4-1000+ 'px'
    if (event.code == 'Backspace') {
-      pencil.style.marginLeft = markerText.value.length*7.4-14.4 + 'px'
+      pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px'
          
    }
 })
 
 // console.log(markerText.innerText.length);
 // console.log(markerText.innerHTML.length);
+// pencil.classList.add('pencilRed')
 
 redMarker.addEventListener('click', ()=> {
+   markerText.style.color = 'red'   
    pencil.classList.remove('pencilBlue')
    pencil.classList.add('pencilRed')
    pencil.classList.remove ('pencilGreen')
@@ -143,11 +145,13 @@ redMarker.addEventListener('click', ()=> {
 
 
 greenMarker.addEventListener('click', ()=> {
+   markerText.style.color = 'green'   
    pencil.classList.add('pencilGreen')
    pencil.classList.remove('pencilBlue')
 })
 
 blueMarker.addEventListener('click', ()=> {
+   markerText.style.color = 'blue'   
    pencil.classList.add('pencilBlue')
 })
 

@@ -66,13 +66,13 @@ body {
 }
 
 .pencilRed {
-  filter: drop-shadow(100px 1px red);
+  filter: drop-shadow(1000px 1px red);
 }
 .pencilGreen {
-  filter: drop-shadow(100px 1px green);
+  filter: drop-shadow(1000px 1px green);
 }
 .pencilBlue {
-  filter: drop-shadow(100px 1px blue);
+  filter: drop-shadow(1000px 1px blue);
 }
 
 
