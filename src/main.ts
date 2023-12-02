@@ -132,7 +132,7 @@ printLetters.addEventListener ('click', ()=> {
 
 
 
-// блок с маркером
+// печать текста в верхнем блоке
 markerText.addEventListener('keydown', (event)=> {
    console.log(event.code);
 
@@ -141,7 +141,7 @@ markerText.addEventListener('keydown', (event)=> {
    let digital = markerText.value.length
    elem.innerHTML = digital+1
    
-   if (event.code == 'Backspace') {
+   if (event.code == 'Backspace' || event.code == 'Delete') {
       pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px' 
       elem.innerHTML = digital-1
       if (elem.innerHTML ==-1) {
@@ -150,17 +150,17 @@ markerText.addEventListener('keydown', (event)=> {
    }
 
    if (elem.innerHTML>=41){
-      elem.innerHTML= ''
+      markerText.innerHTML= ''
       alert ('Блок переполнен')
    }
 
    
-   // console.log(elem.innerHTML);
+   console.log(markerText.innerText);
    // console.log(elem.nodeValue.length);
        
 
    let elem2 = rightSide.childNodes[7]
-   elem2.innerHTML = digital*2.5 + '%'
+   elem2.innerHTML = (digital+1)*2.5 + '%'
 
    // for (let i =1; i<)
    console.log(elem);
