@@ -306,10 +306,24 @@ color: red;
     flex-direction: column;
     gap: 10px;
   }
+  #markerContent>div>button {
+    width: 130px;
+  }
   #pencil {
     margin-top: 200px;
   }
   #rightSide {
+    width: 343px;
+    margin-left: 0px;
     border: none;
   }
+  
+ #markerContainer {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+#bts {
+  display: flex;
+  flex-direction: row !important;
+}
 }
