@@ -106,6 +106,7 @@ class Katridge {
 
 //! Сделать маркер (красный, синий, зеленый)!
 
+const markerContainer = document.querySelector('#markerContainer') as HTMLDivElement
 const redMarker = document.querySelector ('#red') as HTMLButtonElement
 const greenMarker = document.querySelector ('#green') as HTMLButtonElement
 const blueMarker = document.querySelector ('#blue') as HTMLButtonElement
@@ -114,7 +115,14 @@ const printLetters = document.querySelector ('#printLetters') as HTMLButtonEleme
 const markerText = document.querySelector ('#markerText') as HTMLInputElement
 const showText = document.querySelector ('#showText') as HTMLDivElement
 const pencil = document.querySelector ('#pencil') as HTMLPictureElement
+const rightSide = document.querySelector ('#rightSide') as HTMLDivElement
 
+//! написать выберете цвет
+
+markerContainer.addEventListener ('click', ()=> {
+
+   
+})
 
 printLetters.addEventListener ('click', ()=> {
    showText.innerHTML += markerText.value   
@@ -129,6 +137,16 @@ markerText.addEventListener('keydown', (event)=> {
       pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px'
          
    }
+
+   let elem = rightSide.childNodes[3]
+   let digital = markerText.value.length
+   elem.innerHTML = digital+1
+   // elem.innerHTML = (digital+1)/2
+
+   console.log(elem);
+   
+
+
 })
 
 // console.log(markerText.innerText.length);

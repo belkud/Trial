@@ -3,13 +3,25 @@ body {
   background-color: black;
 }
 
- 
+ #markerContainer {
+   margin-top: 250px;
+   margin-left: 50px;
+   display: flex;
+ }
+
+#rightSide {
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+  border: 1px solid white;
+}
+
 
 #markerContent {
   display: flex;
   flex-direction: column;
-  margin-top: 250px;
-  margin-left: 50px;
   width: 310px;
   gap: 15px;
   background-color:rgb(148, 218, 218);

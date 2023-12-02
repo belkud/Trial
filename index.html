@@ -52,26 +52,35 @@
 </div> -->
 
   <!--! Создание маркера -->
-<div id="markerContent">
-  <h3>Выбрать цвет маркера</h3>
-  <div>
-    <!-- <label id="red"><span id="red">Красный</span><input id="red" type="radio" name="color"  value="red" checked ><div class="red" id="red"><div></div></div></label> -->
-    <button id="red">red</button>
-    <button id="green">green</button>
-    <button id="blue">blue</button>
+  <div id="markerContainer" >
+    <div id="markerContent">
+
+    <h3>Выбрать цвет маркера</h3>
+    <div>
+      <!-- <label id="red"><span id="red">Красный</span><input id="red" type="radio" name="color"  value="red" checked ><div class="red" id="red"><div></div></div></label> -->
+      <button id="red">red</button>
+      <button id="green">green</button>
+      <button id="blue">blue</button>
+    </div>
+    <label>Печатаем тут</label>
+    <input id="markerText" type="text" value=""  name="" placeholder="введите текст" >
+    <div style="display: flex; justify-content: space-evenly">
+      <button id="printLetters">Печать</button>
+      <button id="deleteLetters">Стереть данные</button>
+    </div>
+    <div id="showText"></div>
+    <!-- <div id="pencil" style="position: absolute; font-size: 50px; rotate: 90deg; margin-top: 120px; padding-left: 15px;">	&#9998;</div> -->
+    <img id="pencil" style="position: absolute;  width: 50px;  margin-left: 0px;" src="public/pencil.png" alt="">
   </div>
-  <label>Печатаем тут</label>
-  <input id="markerText" type="text" value=""  name="" placeholder="введите текст" >
-  <div style="display: flex; justify-content: space-evenly">
-    <button id="printLetters">Печать</button>
-    <button id="deleteLetters">Стереть данные</button>
+  
+  <div id="rightSide">
+    <h4 style="margin-bottom: 5px; text-align: center;">Количество введенных <br> символов</h4>
+    <div>3</div>
+    <div>Заполненность блока</div>
+    <div>3</div>
   </div>
-  <div id="showText"></div>
-  <!-- <div id="pencil" style="position: absolute; font-size: 50px; rotate: 90deg; margin-top: 120px; padding-left: 15px;">	&#9998;</div> -->
-  <img id="pencil" style="position: absolute;  width: 50px;  margin-left: 0px;" src="public/pencil.png" alt="">
+  
 </div>
-
-
 
 
 
