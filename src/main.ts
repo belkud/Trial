@@ -123,8 +123,8 @@ printLetters.addEventListener ('click', ()=> {
 
 markerText.addEventListener('keydown', (event)=> {
    console.log(event.code);
-   // let shift = pencil.style.marginLeft
-   pencil.style.marginLeft = markerText.value.length*7.4+ 'px'
+   // pencil.style.marginLeft = markerText.value.length*7.4+ 'px'
+   pencil.style.marginLeft = markerText.value.length*7.4-100+ 'px'
    if (event.code == 'Backspace') {
       pencil.style.marginLeft = markerText.value.length*7.4-14.4 + 'px'
          
@@ -135,20 +135,20 @@ markerText.addEventListener('keydown', (event)=> {
 // console.log(markerText.innerHTML.length);
 
 redMarker.addEventListener('click', ()=> {
-   markerText.style.color = 'red'
-   pencil.style.color = 'red'
+   pencil.classList.remove('pencilBlue')
+   pencil.classList.add('pencilRed')
+   pencil.classList.remove ('pencilGreen')
 })
- 
-  
+
+
 
 greenMarker.addEventListener('click', ()=> {
-   markerText.style.color = 'green'   
-   pencil.style.color = 'green'   
+   pencil.classList.add('pencilGreen')
+   pencil.classList.remove('pencilBlue')
 })
 
 blueMarker.addEventListener('click', ()=> {
-   markerText.style.color = 'blue'
-   pencil.style.color = 'blue'
+   pencil.classList.add('pencilBlue')
 })
 
 deleteLetters.addEventListener('click', ()=> {

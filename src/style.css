@@ -56,16 +56,24 @@ body {
   border: 1px solid #000;
   border-radius: 3px;
   height: 20px;
+  font-family: monospace;
 }
 
 
 #pencil {
   padding-left:10px;
   margin-top: 135px;
-  /* filter: drop-shadow(1000px 1px red); */
 }
 
-
+.pencilRed {
+  filter: drop-shadow(100px 1px red);
+}
+.pencilGreen {
+  filter: drop-shadow(100px 1px green);
+}
+.pencilBlue {
+  filter: drop-shadow(100px 1px blue);
+}
 
 
 
