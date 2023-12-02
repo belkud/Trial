@@ -295,3 +295,16 @@ color: red;
   width: 100px;
   border-color: aliceblue;
 }
+
+@media screen and (max-width:680px) {
+  #markerContent>div {
+    display: flex;
+    flex-direction: column;
+    color: red;
+    gap: 10px;
+  }
+  #pencil {
+    margin-top: 200px;
+  }
+
+}

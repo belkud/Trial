@@ -141,31 +141,31 @@ markerText.addEventListener('keydown', (event)=> {
    let digital = markerText.value.length
    elem.innerHTML = digital+1
    
+   let elem2 = rightSide.childNodes[7]
+   elem2.innerHTML = (digital+1)*2.5 + '%'
+   
    if (event.code == 'Backspace' || event.code == 'Delete') {
       pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px' 
+      elem2.innerHTML = (digital-1)*2.5 + '%'
       elem.innerHTML = digital-1
       if (elem.innerHTML ==-1) {
          elem.innerHTML=0
       }
+
+      if (elem.innerHTML>=41){
+         markerText.innerHTML= ''
+         alert ('Блок переполнен')
+      }
+      if (elem2.innerHTML==-2.5+ '%'){
+         elem2.innerHTML=0+ '%'
+         console.log('hi');
+         
+         console.log(elem2.innerHTML);
+      }
    }
-
-   if (elem.innerHTML>=41){
-      markerText.innerHTML= ''
-      alert ('Блок переполнен')
-   }
-
    
-   console.log(markerText.innerText);
-   // console.log(elem.nodeValue.length);
-       
 
-   let elem2 = rightSide.childNodes[7]
-   elem2.innerHTML = (digital+1)*2.5 + '%'
-
-   // for (let i =1; i<)
-   console.log(elem);
-
-   
+      
    
    
 })
