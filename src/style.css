@@ -289,11 +289,11 @@ color: red;
 #press, .press2 {
   margin-top: 20px;
   color: aliceblue;
-  background-color: rgb(243, 66, 66);
   border-radius: 5px ;
-  padding: 5px;
-  width: 100px;
   border-color: aliceblue;
+  padding: 5px;
+  background-color: rgb(243, 66, 66);
+  width: 100px;
 }
 
 @media screen and (max-width:680px) {
