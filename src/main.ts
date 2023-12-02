@@ -116,11 +116,10 @@ const markerText = document.querySelector ('#markerText') as HTMLInputElement
 const showText = document.querySelector ('#showText') as HTMLDivElement
 const pencil = document.querySelector ('#pencil') as HTMLPictureElement
 const rightSide = document.querySelector ('#rightSide') as HTMLDivElement
-
-//! написать выберете цвет
+const line1 = document.querySelector ('#line1') as HTMLDivElement
+ 
 
 markerContainer.addEventListener ('click', ()=> {
-
    
 })
 
@@ -130,13 +129,8 @@ printLetters.addEventListener ('click', ()=> {
 })
 
 
-
-
 // печать текста в верхнем блоке
 markerText.addEventListener('keydown', (event)=> {
-   console.log(event.code);
-   console.log(event.keyCode);
-   console.log(event.key);
 
    pencil.style.marginLeft = markerText.value.length*7.4-1000+ 'px'
    let elem = rightSide.childNodes[3]
@@ -145,6 +139,20 @@ markerText.addEventListener('keydown', (event)=> {
    
    let elem2 = rightSide.childNodes[7]
    elem2.innerHTML = (digital+1)*2.5 + '%'
+
+   // line1.style.background = 'rgb(87, 87, 88)'
+
+   let moveLine = line1.firstElementChild
+   moveLine.style.border ='1px solid aliceblue'
+   moveLine.style.transition = .5 + 's'
+   moveLine.style.width = digital*4.05 + 'px'
+   console.log(digital+1);
+   
+
+   if (elem.innerHTML>=41){
+      markerText.innerHTML= ''
+      alert ('Блок переполнен')
+   }
    
    if (event.code == 'Backspace' || event.code == 'Delete' || event.key == 'Backspace' || event.key == 'Delete') {
       pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px' 
@@ -154,10 +162,6 @@ markerText.addEventListener('keydown', (event)=> {
          elem.innerHTML=0
       }
 
-      if (elem.innerHTML>=41){
-         markerText.innerHTML= ''
-         alert ('Блок переполнен')
-      }
       if (elem2.innerHTML==-2.5+ '%'){
          elem2.innerHTML=0+ '%'
          console.log('hi');
@@ -165,11 +169,7 @@ markerText.addEventListener('keydown', (event)=> {
          console.log(elem2.innerHTML);
       }
    }
-   
-
-      
-   
-   
+ 
 })
 
 // console.log(markerText.innerText.length);
@@ -182,8 +182,6 @@ redMarker.addEventListener('click', ()=> {
    pencil.classList.add('pencilRed')
    pencil.classList.remove ('pencilGreen')
 })
-
-
 
 greenMarker.addEventListener('click', ()=> {
    markerText.style.color = 'green'   
