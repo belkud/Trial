@@ -4,6 +4,105 @@ import './style.css'
 
 
 
+class Katridge {
+   color: string;
+   amount_of_ink: number;
+   constructor(color: string, amount_of_ink=100) {
+       this.color = color;
+       this.amount_of_ink = amount_of_ink;
+   }
+   display(str: string) {
+       // let quantity = this.amount_of_ink;
+       for (let i = 0; i < str.length; i++) {
+           if (this.amount_of_ink != 0) {
+             if (str[i] != ' ') this.amount_of_ink -= 0.5
+             output2.innerHTML += `<span style="color:${this.color}; opacity:${this.amount_of_ink/100}">${str[i]}</span>`
+           }else{
+             // if (i < str.length){
+             //   this.amount_of_ink = 100
+             //   continue
+             // }
+           }
+       }
+   }
+ }
+ class FullInk extends Katridge{
+   full (){
+       this.amount_of_ink = 100
+   }
+ }
+ 
+ let lineText: string 
+ // let color1 : string
+ const ink = document.querySelectorAll('input[name="color"]') as NodeListOf<HTMLInputElement>
+ let asd = {} as any
+ for (let colors of ink) {
+   asd[colors.value] = {katridge: new FullInk(colors.value), div: document.querySelector(`.${colors.value} div`)}
+ }
+ console.log(asd)
+ const printText = document.querySelector ('.display') as HTMLButtonElement
+ const output2 = document.querySelector('#print p') as HTMLParagraphElement
+ // const inputColors = document.querySelectorAll('input[type="radio"][name="color"]') as NodeListOf<HTMLInputElement>
+ 
+ const onClickc = function (){
+   let checked = ''
+   for (let color of ink) {
+     if (color.checked) {
+       checked = color.value
+     }
+   }
+   lineText = (document.querySelector('.input') as HTMLInputElement).value
+   
+   asd[checked]?.katridge?.display(lineText) 
+   asd[checked]?.div.setAttribute('style','width:'+(asd[checked]?.katridge?.amount_of_ink*3)+'px')
+ }
+ printText?.addEventListener('click', onClickc)
+ 
+ 
+ 
+ // const asd = new FullInk('red',5)
+ //  //asd.full(10)
+ // asd.display(lineText)
+ 
+ 
+ 
+ 
+ 
+ 
+ // const printText = document.getElementById(".qwe") as HTMLButtonElement
+ // printText.addEventListener("click", () => {
+ //   const myInput = document.getElementById("#DZ1 input") as HTMLInputElement;
+ //   const value = myInput.value;
+ //   console.log(value);
+ // });
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ // Создаём и описываем новый html-элемент
+ const myNewDiv = document.createElement('div')
+ myNewDiv.className = 'aaa bbb'
+ myNewDiv.setAttribute('style','color:green')
+ myNewDiv.innerText = 'div созданный в js'
+ myNewDiv.addEventListener('click', ()=>{alert('hello')})
+ 
+ // Добавляем в уже существующий элемент
+ const divForPrintMachine = document.querySelector('.forPrintMachine')
+ divForPrintMachine?.appendChild(myNewDiv)
+ 
+ 
+ // Получаем элементы
+ const input1 = document.querySelector('#task1 input') as HTMLInputElement
+ 
+ if (input1) input1.value
+
+
+
 
 //! Сделать маркер (красный, синий, зеленый)!
 
@@ -11,31 +110,48 @@ const redMarker = document.querySelector ('#red') as HTMLButtonElement
 const greenMarker = document.querySelector ('#green') as HTMLButtonElement
 const blueMarker = document.querySelector ('#blue') as HTMLButtonElement
 const deleteLetters = document.querySelector ('#deleteLetters') as HTMLButtonElement
+const printLetters = document.querySelector ('#printLetters') as HTMLButtonElement
 const markerText = document.querySelector ('#markerText') as HTMLInputElement
+const showText = document.querySelector ('#showText') as HTMLDivElement
+const pencil = document.querySelector ('#pencil') as HTMLPictureElement
+
+
+printLetters.addEventListener ('click', ()=> {
+   showText.innerHTML += markerText.value
+
+   let shift = markerText.value.length  
+   pencil.style.marginLeft += shift*7-500+ 'px'
+   
+   
+   console.log(pencil.style.marginLeft);
+   console.log(shift);
+   
+})
+
+markerText.addEventListener('keydown', ()=> {
+   console.log(3);
+   pencil.style.marginLeft = markerText.value.length*7.4+ 'px'
+   
+})
+
+// console.log(markerText.innerText.length);
+// console.log(markerText.innerHTML.length);
+
 redMarker.addEventListener('click', ()=> {
    markerText.style.color = 'red'
+   pencil.style.color = 'red'
 })
-
  
-   // let x = markerText.value
-   // for (let i=1; i<5; i++) {
-      // markerText.innerText <= `${i}`
-      markerText.innerText 
-      // console.log(markerText.value );
-      // console.log(i);
-      markerText.value.length < 10
-      console.log(markerText.value.length);
- 
-   
-// }
-
-
+  
 
 greenMarker.addEventListener('click', ()=> {
-   markerText.style.color = 'green'
+   markerText.style.color = 'green'   
+   pencil.style.color = 'green'   
 })
+
 blueMarker.addEventListener('click', ()=> {
    markerText.style.color = 'blue'
+   pencil.style.color = 'blue'
 })
 
 deleteLetters.addEventListener('click', ()=> {

@@ -9,19 +9,66 @@
 </head>
 
 <body>
-  
 
+
+
+
+
+
+
+
+
+
+  
+  <!-- <div id ="DZ1">
+    <h3>Задание 1<br>
+        Реализовать класс, описывающий простой маркер. В классе
+        должны быть следующие компоненты:<br>
+        ■ поле, которое хранит цвет маркера;<br>
+        ■ поле, которое хранит количество чернил в маркере (в про-
+        центах);<br>
+        ■ метод для печати (метод принимает строку и выводит
+        текст соответствующим цветом; текст выводится до тех
+        пор, пока в маркере есть чернила; один не пробельный
+        символ – это 0,5% чернил в маркере).<br>
+        Реализовать класс, описывающий заправляющийся маркер,
+        унаследовав его от. простого маркера и добавив метод для заправки
+        маркера.<br>
+        Продемонстрировать работу написанных методов.</h3>
+        <label><h2>Введите текст для печати</h2></label>
+    <input tupe = "text" class="input" >
+    
+    <h2>Выберете цвет</h2>
+    <label id="red"><span>Красный</span><input type="radio" name="color"  value="red" checked ><div class="red"><div></div></div></label>
+    
+    <label id="green"><span>Зеленый</span><input type="radio" name="color"  value="green" ><div class="green"><div></div></div></label>
+    <label id="blue"><span>Синий</span><input type="radio" name="color"  value="blue" ><div class="blue"><div></div></div></label>
+   
+    <button>заправьте чернила</button>
+    <button class="display">Печать</button><hr>
+    <label>Печатаем тут</label>
+    <div id="print"><p></p></div>
+    
+</div> -->
 
   <!--! Создание маркера -->
 <div id="markerContent">
-    <h3>Выбрать цвет маркера</h3>
-      <div>
-        <button id="red">red</button>
-         <button id="green">green</button>
-        <button id="blue">blue</button>
-      </div>
-    <input type="text" value="text"  name="" placeholder="введите текст" id="markerText">
-  <button id="deleteLetters">Стереть данные</button>
+  <h3>Выбрать цвет маркера</h3>
+  <div>
+    <!-- <label id="red"><span id="red">Красный</span><input id="red" type="radio" name="color"  value="red" checked ><div class="red" id="red"><div></div></div></label> -->
+    <button id="red">red</button>
+    <button id="green">green</button>
+    <button id="blue">blue</button>
+  </div>
+  <label>Печатаем тут</label>
+  <input id="markerText" type="text" value=""  name="" placeholder="введите текст" >
+  <div style="display: flex; justify-content: space-evenly">
+    <button id="printLetters">Печать</button>
+    <button id="deleteLetters">Стереть данные</button>
+  </div>
+  <div id="showText" placeholder="af"></div>
+  <div id="pencil" style="position: absolute; font-size: 50px; rotate: 90deg; margin-top: 120px; padding-left: 15px;">	&#9998;</div>
+  <!-- <img  style="  width: 50px;  margin-left: -1000px;" src="public/pencil.png" alt=""> -->
 </div>
 
 
