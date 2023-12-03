@@ -123,7 +123,7 @@ const simbols = document.querySelector ('#simbols') as HTMLDivElement
 
 // звуки
 const audio = new Audio()
-audio.src='public/ChangeMarker.mp3'
+audio.src='ChangeMarker.mp3'
 
 const audio2 = new Audio()
 audio2.src = 'WriteMarker.mp3'
