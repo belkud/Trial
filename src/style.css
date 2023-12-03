@@ -58,7 +58,7 @@ body {
   text-shadow: 1px -1px white;
   color: red;
 }
-#markerText {
+#writeText {
   height: 50px;
   font-family: monospace;
 }
@@ -68,7 +68,7 @@ body {
   background-color: black;
 }
 
-#showText {
+#printText {
   background-color: aliceblue;
   border: 1px solid #000;
   border-radius: 3px;
@@ -84,21 +84,24 @@ body {
 
 .pencilRed {
   filter: drop-shadow(1000px 1px red);
+  transition: .1s;
 }
 .pencilGreen {
   filter: drop-shadow(1000px 1px green);
+  transition: .1s;
 }
 .pencilBlue {
   filter: drop-shadow(1000px 1px blue);
+  transition: .1s;
 }
-#line1 {
+#line1, #line2 {
   position: relative;
   height: 30px;
   width: 240px;
   border: 1px solid red;
   background: linear-gradient(145deg, rgb(108, 108, 109, .1), rgb(232, 228, 228, .5));
 }
-#line1>div {
+#line1>div, #line2>div {
   background-color: rgb(80, 238, 80);
   background: linear-gradient(145deg,blue, red);
   /* border: 1px solid wheat; */
@@ -327,7 +330,6 @@ color: red;
   #rightSide {
     width: 343px;
     margin-left: 0px;
-    border: none;
   }
   
  #markerContainer {

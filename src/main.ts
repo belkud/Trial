@@ -40,8 +40,8 @@ class Katridge {
    asd[colors.value] = {katridge: new FullInk(colors.value), div: document.querySelector(`.${colors.value} div`)}
  }
  console.log(asd)
- const printText = document.querySelector ('.display') as HTMLButtonElement
- const output2 = document.querySelector('#print p') as HTMLParagraphElement
+//  const printText = document.querySelector ('.display') as HTMLButtonElement
+//  const output2 = document.querySelector('#print p') as HTMLParagraphElement
  // const inputColors = document.querySelectorAll('input[type="radio"][name="color"]') as NodeListOf<HTMLInputElement>
  
  const onClickc = function (){
@@ -56,7 +56,7 @@ class Katridge {
    asd[checked]?.katridge?.display(lineText) 
    asd[checked]?.div.setAttribute('style','width:'+(asd[checked]?.katridge?.amount_of_ink*3)+'px')
  }
- printText?.addEventListener('click', onClickc)
+//  printText?.addEventListener('click', onClickc)
  
  
  
@@ -104,7 +104,7 @@ class Katridge {
 
 
 
-//! Сделать маркер (красный, синий, зеленый)!
+//! Маркер
 
 const markerContainer = document.querySelector('#markerContainer') as HTMLDivElement
 const redMarker = document.querySelector ('#red') as HTMLButtonElement
@@ -112,11 +112,13 @@ const greenMarker = document.querySelector ('#green') as HTMLButtonElement
 const blueMarker = document.querySelector ('#blue') as HTMLButtonElement
 const deleteLetters = document.querySelector ('#deleteLetters') as HTMLButtonElement
 const printLetters = document.querySelector ('#printLetters') as HTMLButtonElement
-const markerText = document.querySelector ('#markerText') as HTMLInputElement
-const showText = document.querySelector ('#showText') as HTMLDivElement
+const writeText = document.querySelector ('#writeText') as HTMLInputElement
+const printText = document.querySelector ('#printText') as HTMLDivElement
 const pencil = document.querySelector ('#pencil') as HTMLPictureElement
 const rightSide = document.querySelector ('#rightSide') as HTMLDivElement
 const line1 = document.querySelector ('#line1') as HTMLDivElement
+const line2 = document.querySelector ('#line2') as HTMLDivElement
+const simbols = document.querySelector ('#simbols') as HTMLDivElement
 
 
 // звуки
@@ -127,21 +129,34 @@ const audio2 = new Audio()
 audio2.src = 'WriteMarker.mp3'
 
 markerContainer.addEventListener ('click', ()=> {
-   audio.play()
+   // audio.play()
 })
 
-// печать текста в нижнем блоке
 printLetters.addEventListener ('click', ()=> {
-   showText.innerHTML += markerText.value   
+   // Количество печатных символов
+   printText.innerHTML += writeText.value
+
+   //бегущая нижняя строчка
+   let number = rightSide.childNodes[15]
+   number.innerHTML = printText.innerHTML.length
+   let moveLine = line2.firstElementChild
+
+   moveLine.style.width = simbols.innerHTML*2.45+'px'
+   moveLine.style.transition = .5 + 's'
+   moveLine.style.border ='1px solid aliceblue'
+
+   // Заполненность нижнего блока
+   line2.previousElementSibling.innerHTML = simbols.innerHTML/2+'%'
+ 
 })
 
 
 // печать текста в верхнем блоке
-markerText.addEventListener('keydown', (event)=> {
+writeText.addEventListener('keydown', (event)=> {
 
-   pencil.style.marginLeft = markerText.value.length*7.4-1000+ 'px'
+   pencil.style.marginLeft = writeText.value.length*7.4-1000+ 'px'
    let elem = rightSide.childNodes[3]
-   let digital = markerText.value.length
+   let digital = writeText.value.length
    elem.innerHTML = digital+1
    
    let elem2 = rightSide.childNodes[7]
@@ -156,12 +171,12 @@ markerText.addEventListener('keydown', (event)=> {
    audio2.play()
    
    if (elem.innerHTML>=41){
-      markerText.innerHTML= ''
+      writeText.innerHTML= ''
       alert ('Блок переполнен')
    }
    
    if (event.code == 'Backspace' || event.code == 'Delete' || event.key == 'Backspace' || event.key == 'Delete') {
-      pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px' 
+      pencil.style.marginLeft = writeText.value.length*7.4-1014.4 + 'px' 
       elem2.innerHTML = (digital-1)*2.5 + '%'
       elem.innerHTML = digital-1
       if (elem.innerHTML ==-1) {
@@ -177,18 +192,18 @@ markerText.addEventListener('keydown', (event)=> {
       //    moveLine.style.width = (digital-1)*6.1 + 'px'
       // }
       moveLine.style.width == digital*30 + 'px'
-      console.log(markerText.value.length);
+      console.log(writeText.value.length);
       console.log(  moveLine.style.width == digital*6.1 + 'px');
    }
    
 })
 
-// console.log(markerText.innerText.length);
-// console.log(markerText.innerHTML.length);
+// console.log(writeText.innerText.length);
+// console.log(writeText.innerHTML.length);
 // pencil.classList.add('pencilRed')
 
 redMarker.addEventListener('click', ()=> {
-   markerText.style.color = 'red'   
+   writeText.style.color = 'red'   
    pencil.classList.remove('pencilBlue')
    pencil.classList.add('pencilRed')
    pencil.classList.remove ('pencilGreen')
@@ -196,23 +211,22 @@ redMarker.addEventListener('click', ()=> {
 })
 
 greenMarker.addEventListener('click', ()=> {
-   markerText.style.color = 'green'   
+   writeText.style.color = 'green'   
    pencil.classList.add('pencilGreen')
    pencil.classList.remove('pencilBlue')
    audio.play()
 })
 
 blueMarker.addEventListener('click', ()=> {
-   markerText.style.color = 'blue'   
-   markerText.style.transition = 'blue'   
+   writeText.style.color = 'blue'   
    pencil.classList.add('pencilBlue')
    audio.play()
 })
 
 deleteLetters.addEventListener('click', (event)=> {
-   markerText.value = ''
+   writeText.value = ''
    if (event.code == 'Backspace') {
-      pencil.style.marginLeft = markerText.value.length*7.4-1014.4 + 'px'
+      pencil.style.marginLeft = writeText.value.length*7.4-1014.4 + 'px'
    }
      
          
