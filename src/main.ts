@@ -117,10 +117,17 @@ const showText = document.querySelector ('#showText') as HTMLDivElement
 const pencil = document.querySelector ('#pencil') as HTMLPictureElement
 const rightSide = document.querySelector ('#rightSide') as HTMLDivElement
 const line1 = document.querySelector ('#line1') as HTMLDivElement
- 
+
+
+// звуки
+const audio = new Audio()
+audio.src='public/ChangeMarker.mp3'
+
+const audio2 = new Audio()
+audio2.src = 'WriteMarker.mp3'
 
 markerContainer.addEventListener ('click', ()=> {
-   
+   audio.play()
 })
 
 // печать текста в нижнем блоке
@@ -145,6 +152,8 @@ markerText.addEventListener('keydown', (event)=> {
    moveLine.style.width = digital*6.1 + 'px'
    moveLine.style.border ='1px solid aliceblue'
    moveLine.style.transition = .5 + 's'
+
+   audio2.play()
    
    if (elem.innerHTML>=41){
       markerText.innerHTML= ''
@@ -183,17 +192,21 @@ redMarker.addEventListener('click', ()=> {
    pencil.classList.remove('pencilBlue')
    pencil.classList.add('pencilRed')
    pencil.classList.remove ('pencilGreen')
+   audio.play()
 })
 
 greenMarker.addEventListener('click', ()=> {
    markerText.style.color = 'green'   
    pencil.classList.add('pencilGreen')
    pencil.classList.remove('pencilBlue')
+   audio.play()
 })
 
 blueMarker.addEventListener('click', ()=> {
    markerText.style.color = 'blue'   
+   markerText.style.transition = 'blue'   
    pencil.classList.add('pencilBlue')
+   audio.play()
 })
 
 deleteLetters.addEventListener('click', (event)=> {
