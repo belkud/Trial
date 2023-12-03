@@ -141,7 +141,7 @@ printLetters.addEventListener ('click', ()=> {
    number.innerHTML = printText.innerHTML.length
    let moveLine = line2.firstElementChild
 
-   moveLine.style.width = simbols.innerHTML*2.45+'px'
+   moveLine.style.width = simbols.innerHTML*1.19+'px'
    moveLine.style.transition = .5 + 's'
    moveLine.style.border ='1px solid aliceblue'
 
@@ -337,7 +337,7 @@ deleteLetters.addEventListener('click', (event)=> {
          
          //! Зажатие 'Alt' помогает выделить место для текста сразу в нескольких местах
          
-         
+         // !Грамотно давать названия обьектам
          
          
          

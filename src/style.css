@@ -74,6 +74,7 @@ body {
   border-radius: 3px;
   height: 20px;
   font-family: monospace;
+  word-break:break-all;
 }
 
 
