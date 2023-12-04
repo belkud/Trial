@@ -151,21 +151,21 @@ printLetters.addEventListener ('click', ()=> {
 })
 
 
+let moveLine = line1.firstElementChild as HTMLDivElement
 // печать текста в верхнем блоке
 writeText.addEventListener('keydown', (event)=> {
 
    pencil.style.marginLeft = writeText.value.length*7.4-1000+ 'px'
-   let elem = rightSide.childNodes[3]
-   let digital = writeText.value.length
+   let elem = rightSide.childNodes[3] as HTMLDivElement
+   let digital = writeText.value.length  
    elem.innerHTML = digital+1
    
    let elem2 = rightSide.childNodes[7]
    elem2.innerHTML = (digital+1)*2.5 + '%'
  
 
-   let moveLine = line1.firstElementChild
-   moveLine.style.width = digital*6.1 + 'px'
    moveLine.style.border ='1px solid aliceblue'
+   moveLine.style.width = (digital+1)*6 + 'px'
    moveLine.style.transition = .5 + 's'
 
    audio2.play()
@@ -185,22 +185,30 @@ writeText.addEventListener('keydown', (event)=> {
 
       if (elem2.innerHTML==-2.5+ '%'){
          elem2.innerHTML=0+ '%'
-         
       }
 
-      // if (moveLine.style.width == digital*6.1 + 'px') {
+      if(moveLine.style.width == (digital+1)*6 + 'px') {
+         moveLine.style.width = (digital-1)*6 + 'px'
+         console.log(digital);
+      }
+      if (digital==0) {
+         moveLine.style.width = 0 + 'px'
+      }
+      // if(digital==0){
+      //    moveLine.style.width = 0 + 'px'
+      // }
+
+       
       //    moveLine.style.width = (digital-1)*6.1 + 'px'
       // }
-      moveLine.style.width == digital*30 + 'px'
-      console.log(writeText.value.length);
-      console.log(  moveLine.style.width == digital*6.1 + 'px');
+
+
+      
    }
    
 })
 
-// console.log(writeText.innerText.length);
-// console.log(writeText.innerHTML.length);
-// pencil.classList.add('pencilRed')
+
 
 redMarker.addEventListener('click', ()=> {
    writeText.style.color = 'red'   
