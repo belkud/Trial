@@ -193,10 +193,13 @@ writeText.addEventListener('keydown', (event)=> {
       }
       if (digital==0) {
          moveLine.style.width = 0 + 'px'
+         pencil.style.marginLeft = -1007+'px'
       }
-      // if(digital==0){
-      //    moveLine.style.width = 0 + 'px'
-      // }
+      
+      if(digital==1){
+         // pencil.style.marginLeft = -1006+'px'
+   }
+   
 
        
       //    moveLine.style.width = (digital-1)*6.1 + 'px'
