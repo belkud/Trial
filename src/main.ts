@@ -533,4 +533,77 @@ deleteLetters2.addEventListener('click', (event)=> {
          
 
 
+ 
+
+//  let promise1 = new Promise((resolve, reject)=>{
+//    resolve('Верно')
+//  })
+
+//  promise1.then((value)=> {
+//     console.log(value);
+//  })
+
+
+
+
+//  let promise2 = new Promise((resolve, reject)=> {
+//    reject('Неверно')
+//  })
+//  promise2.catch((err)=> {
+//    console.log(err);
+//  })
   
+
+//! Промисы
+let promise1 = new Promise ((resolve,reject)=> {
+   resolve('Одобрено')
+})
+promise1.catch((error)=> {
+   console.log(error);
+}).then((event)=> {
+   console.log(event);
+}).finally(()=> {
+console.log('promise1 завершён');
+});
+
+
+
+
+let promise2 = new Promise ((resolve,reject)=> {
+   reject('Отказано')
+})
+promise2.then((event)=> {
+   console.log(event);
+}).catch((error)=> {
+   console.log(error);
+}).finally(()=> {
+   console.log('promise2 завершён');
+   
+})
+
+//! Первый способ
+fetch('https://jsonplaceholder.typicode.com/todos/')
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+      .catch((err)=>console.log(err.message));
+      
+      let start = new Date()
+      console.log(start.toString());
+      
+//! Второй способ
+ async function fetchTodos(url:any) {
+   const response = await fetch(url);
+   const json = await response.json()
+   console.log(json);
+ }
+fetchTodos('https://jsonplaceholder.typicode.com/todos/')
+
+
+
+
+
+
+
+
+
+
