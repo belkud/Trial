@@ -529,19 +529,8 @@ deleteLetters2.addEventListener('click', (event)=> {
          
          
          
+   
+         
+
+
   
-
-
-         // const firstRow = table.firstElementChild?.firstElementChild
-         
-         // console.log(firstRow);
-         
-         // firstRow.style.backgroundColor = 'red'
-         
-         
-         
-         
-         
-         
-         
-         
