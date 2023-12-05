@@ -156,7 +156,7 @@ printLetters.addEventListener ('click', ()=> {
    //! 1. Как можно код выше сделать через цикл
    //! 2. Через <span> менять цвет маркера
    //! 3. Некорректное отображение поведения кнопок (event.code == 'Backspace' || event.code == 'Delete')
-
+   
    // div c печатными символами (второй способ)
    for (let i =1; i<=5; i++){
          if(num/43>i) {
