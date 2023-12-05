@@ -59,7 +59,6 @@ class Katridge {
 //  printText?.addEventListener('click', onClickc)
  
  
- 
  // const asd = new FullInk('red',5)
  //  //asd.full(10)
  // asd.display(lineText)
@@ -111,6 +110,7 @@ const redMarker = document.querySelector ('#red') as HTMLButtonElement
 const greenMarker = document.querySelector ('#green') as HTMLButtonElement
 const blueMarker = document.querySelector ('#blue') as HTMLButtonElement
 const deleteLetters = document.querySelector ('#deleteLetters') as HTMLButtonElement
+const deleteLetters2 = document.querySelector ('#deleteLetters2') as HTMLButtonElement
 const printLetters = document.querySelector ('#printLetters') as HTMLButtonElement
 const writeText = document.querySelector ('#writeText') as HTMLInputElement
 const printText = document.querySelector ('#printText') as HTMLDivElement
@@ -128,11 +128,16 @@ audio.src='ChangeMarker.mp3'
 const audio2 = new Audio()
 audio2.src = 'WriteMarker.mp3'
 
+let eraser = new Audio()
+eraser.src = 'eraserSound.mp3'
+
+let print = new Audio()
+print.src = 'printSound.mp3.mp3'
 
 // printText.style.height = 20 +'px'
 
 printLetters.addEventListener ('click', ()=> {
-
+   print.play()
    // div c печатными символами
    printText.innerHTML += writeText.value
    let num = printText.innerHTML.length
@@ -156,7 +161,7 @@ printLetters.addEventListener ('click', ()=> {
    //! 1. Как можно код выше сделать через цикл
    //! 2. Через <span> менять цвет маркера
    //! 3. Некорректное отображение поведения кнопок (event.code == 'Backspace' || event.code == 'Delete')
-   
+
    // div c печатными символами (второй способ)
    for (let i =1; i<=5; i++){
          if(num/43>i) {
@@ -165,11 +170,10 @@ printLetters.addEventListener ('click', ()=> {
             // console.log(i);
          }
           if (num>=200) {
-         alert ('Нижний блок заполнен')
+         console.log ('Нижний блок заполнен')
          printText.style.color ='red'
          }
       }
-console.log(writeText.style.place);
 
       
 
@@ -239,7 +243,7 @@ writeText.addEventListener('keydown', (event)=> {
 })
 
 
-
+//! смена маркера
 redMarker.addEventListener('click', ()=> {
    writeText.style.color = 'red'   
    pencil.classList.remove('pencilBlue')
@@ -262,12 +266,16 @@ blueMarker.addEventListener('click', ()=> {
 })
 
 deleteLetters.addEventListener('click', (event)=> {
+   eraser.play()
    writeText.value = ''
    if (event.code == 'Backspace') {
       pencil.style.marginLeft = writeText.value.length*7.4-1014.4 + 'px'
-   }
-     
-         
+   }       
+})
+deleteLetters2.addEventListener('click', (event)=> {
+   eraser.play()
+   printText.innerHTML = ''
+   
 })
 
 
@@ -482,8 +490,6 @@ deleteLetters.addEventListener('click', (event)=> {
 
 
 
-
-
        
          
          
@@ -519,10 +525,7 @@ deleteLetters.addEventListener('click', (event)=> {
          
          
          
-      
-   
-
-
+  
 
 
          // const firstRow = table.firstElementChild?.firstElementChild
