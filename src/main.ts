@@ -128,13 +128,50 @@ audio.src='ChangeMarker.mp3'
 const audio2 = new Audio()
 audio2.src = 'WriteMarker.mp3'
 
-markerContainer.addEventListener ('click', ()=> {
-   // audio.play()
-})
+
+// printText.style.height = 20 +'px'
 
 printLetters.addEventListener ('click', ()=> {
-   // Количество печатных символов
+
+   // div c печатными символами
    printText.innerHTML += writeText.value
+   let num = printText.innerHTML.length
+   //    if (num>=0 && num<=43) {
+   //       printText.style.height =20 +'px'
+   //    } else if (num>43 && num<=86) {
+   //       printText.style.height =32 +'px'
+   //    } else if (num>86 && num<=129) {
+   //       printText.style.height =48 +'px'
+   //    } else if (num>129 && num<=172){
+   //       printText.style.height =64 +'px'
+   //    } else {
+   //       printText.style.height =80 +'px'
+   //    }
+   //    if (num>=200) {
+   //       alert ('Нижний блок заполнен')
+   //       printText.style.color ='red'
+   // }
+
+   //! ВОПРОСЫ:
+   //! 1. Как можно код выше сделать через цикл
+   //! 2. Через <span> менять цвет маркера
+   //! 3. Некорректное отображение поведения кнопок (event.code == 'Backspace' || event.code == 'Delete')
+
+   // div c печатными символами (второй способ)
+   for (let i =1; i<=5; i++){
+         if(num/43>i) {
+            printText.style.height = 16*(i+1) +'px'
+            // console.log(num);
+            // console.log(i);
+         }
+          if (num>=200) {
+         alert ('Нижний блок заполнен')
+         printText.style.color ='red'
+         }
+      }
+console.log(writeText.style.place);
+
+      
 
    //бегущая нижняя строчка
    let number = rightSide.childNodes[15]
@@ -145,7 +182,7 @@ printLetters.addEventListener ('click', ()=> {
    moveLine.style.transition = .5 + 's'
    moveLine.style.border ='1px solid aliceblue'
 
-   // Заполненность нижнего блока
+   // div 'Заполненность нижнего блока'
    line2.previousElementSibling.innerHTML = simbols.innerHTML/2+'%'
  
 })
@@ -189,25 +226,15 @@ writeText.addEventListener('keydown', (event)=> {
 
       if(moveLine.style.width == (digital+1)*6 + 'px') {
          moveLine.style.width = (digital-1)*6 + 'px'
-         console.log(digital);
+         // console.log(digital);
       }
       if (digital==0) {
          moveLine.style.width = 0 + 'px'
          pencil.style.marginLeft = -1007+'px'
-      }
-      
-      if(digital==1){
-         // pencil.style.marginLeft = -1006+'px'
+      }  
    }
+ 
    
-
-       
-      //    moveLine.style.width = (digital-1)*6.1 + 'px'
-      // }
-
-
-      
-   }
    
 })
 
