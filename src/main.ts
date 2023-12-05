@@ -269,7 +269,7 @@ blueMarker.addEventListener('click', ()=> {
 deleteLetters.addEventListener('click', (event)=> {
    eraser.play()
    writeText.value = ''
-   pencil.style.marginLeft = -1000 + 'px'
+   pencil.style.marginLeft = -1007 + 'px'
    if (event.code == 'Backspace') {
       pencil.style.marginLeft = writeText.value.length*7.4-1014.4 + 'px'
    }       
