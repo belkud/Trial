@@ -265,13 +265,17 @@ blueMarker.addEventListener('click', ()=> {
    audio.play()
 })
 
+// удаление символов в верхнем блоке
 deleteLetters.addEventListener('click', (event)=> {
    eraser.play()
    writeText.value = ''
+   pencil.style.marginLeft = -1000 + 'px'
    if (event.code == 'Backspace') {
       pencil.style.marginLeft = writeText.value.length*7.4-1014.4 + 'px'
    }       
 })
+
+// удаление символов в нижнем блоке
 deleteLetters2.addEventListener('click', (event)=> {
    eraser.play()
    printText.innerHTML = ''
