@@ -12,10 +12,12 @@ changeLanguage.addEventListener ('click', ()=> {
    // language.innerHTML =='русский'
    if (language.innerHTML =='русский') {
       language.innerHTML = 'английский'
+      language.style.backgroundColor = 'blue'
       
       markerColor.innerHTML = 'Выбрать цвет маркера'
    } else {
       language.innerHTML = 'русский'
+      language.style.backgroundColor = 'red'
       
       markerColor.innerHTML = 'Change color of marker'
    }
